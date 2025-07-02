@@ -17,3 +17,10 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+# .gitignore
+.env
+.env.*
+*.key
+*.pem
+*.sqlite
+
