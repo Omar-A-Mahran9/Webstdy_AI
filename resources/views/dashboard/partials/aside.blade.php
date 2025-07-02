@@ -60,7 +60,12 @@
                     </x-dashboard.aside-item>
                 @endcan
                 <!--end:Menu item-->
+                @can('view_tools')
+                    <x-dashboard.aside-item :slug="'tools'" :route="route('dashboard.tools.index')" :title="__('tools')">
+                        <i class="fas fa-dumbbell fs-2"></i>
 
+                    </x-dashboard.aside-item>
+                @endcan
                 @can('view_contact_us')
                     <x-dashboard.aside-item :slug="'contact_us'" :route="route('dashboard.contact-requests.index')" :title="__('Contact us')">
                         <i class="ki-outline ki-phone fs-1"></i>
@@ -72,7 +77,7 @@
                     </x-dashboard.aside-item>
                 @endcan
                 <!--begin:Menu item-->
-   
+
                 <!--begin:Menu item-->
                 @can('view_rates')
                     <x-dashboard.aside-item :slug="'rates'" :route="route('dashboard.rates.index')" :title="__('Rates')">
@@ -134,12 +139,7 @@
                 <!--end:Menu item-->
 
 
-                @can('view_tools')
-                    <x-dashboard.aside-item :slug="'tools'" :route="route('dashboard.tools.index')" :title="__('tools')">
-                        <i class="fas fa-dumbbell fs-2"></i>
 
-                    </x-dashboard.aside-item>
-                @endcan
 
                 {{-- @can('view_children_trip')
                     <x-dashboard.aside-item :slug="'trip'" :route="route('dashboard.trip.index')" :title="__('children Trip')">

@@ -114,7 +114,6 @@ var KTDatatablesServerSide = (function () {
         // Re-init functions on every table re-draw -- more info: https://datatables.net/reference/event/draw
         datatable.on("draw", function () {
             initToggleToolbar();
-            toggleToolbars();
             handleEditRows();
             deleteRowWithURL(`/dashboard/${dbTable}/`);
             deleteSelectedRowsWithURL({
@@ -122,7 +121,7 @@ var KTDatatablesServerSide = (function () {
                 restoreUrl: `/dashboard/${dbTable}/restore-selected`,
             });
             KTMenu.createInstances();
-         });
+        });
     };
 
     var handleEditRows = () => {
@@ -167,7 +166,6 @@ var KTDatatablesServerSide = (function () {
         });
     };
 
-
     // Public methods
     return {
         init: function () {
@@ -180,7 +178,7 @@ var KTDatatablesServerSide = (function () {
                 url: `/dashboard/${dbTable}/delete-selected`,
                 restoreUrl: `/dashboard/${dbTable}/restore-selected`,
             });
-         },
+        },
     };
 })();
 

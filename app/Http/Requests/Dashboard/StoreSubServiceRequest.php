@@ -19,15 +19,18 @@ class StoreSubServiceRequest extends FormRequest
 
     public function rules()
     {
-        return [
-            'is_publish' => ['nullable', 'boolean'],
-            "name_ar" => ["required", "max:255", new NotNumbersOnly(), "unique:sub_services,name_ar"],
-            "name_en" => ["required", "max:255", new NotNumbersOnly(), "unique:sub_services,name_en"],
-            "service_id" => ["required" ],
-            "tool_id" => ["required" ],
+    return [
+        'is_publish' => ['nullable', 'boolean'],
+        "name_ar" => ["required", "max:255", new NotNumbersOnly(), "unique:sub_services,name_ar"],
+        "name_en" => ["required", "max:255", new NotNumbersOnly(), "unique:sub_services,name_en"],
+        "service_id" => ["required", "exists:services,id"],
 
-            "description_ar" => ["required", new NotNumbersOnly() ],
-            "description_en" => ["required", new NotNumbersOnly() ],
-             ];
+        // updated validation for tool_id
+        "tool_id" => ["required", "array", "min:1"],
+        "tool_id.*" => ["required", "exists:tools,id"],
+
+        "description_ar" => ["required", new NotNumbersOnly()],
+        "description_en" => ["required", new NotNumbersOnly()],
+    ];
     }
 }

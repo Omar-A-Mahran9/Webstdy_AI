@@ -233,7 +233,7 @@ return [
         'first_name' => 'الاسم الأول',
         'last_name' => 'اسم العائلة',
         'Choose_duration_later' => 'الفترة في وقت لاحق',
-
+'tool_id'=>"الأدوات",
         'message' => 'الرسالة',
         'package_id' => 'الباقة',
         'group_id' => 'المجموعة',

@@ -20,9 +20,10 @@
             <div class="d-flex justify-content-center flex-wrap gap-3 mb-5 mt-5">
                 @can('view_sub_services')
                     <div>
-                        <x-dashboard.aside-item :slug="'sub-services'" :route="route('dashboard.sub-services.index')" :title="__('Sub Services')">
-                            <i class="ki-outline ki-plus fs-2"></i>
-                        </x-dashboard.aside-item>
+                        <a href="{{ route('dashboard.sub-services.index') }}" class="btn btn-primary">
+                            <i class="ki-outline ki-plus fs-2 me-1"></i>
+                            {{ __('Sub Services') }}
+                        </a>
                     </div>
                 @endcan
 
@@ -44,6 +45,7 @@
                 </div>
                 <!--end::Toolbar-->
             </div>
+
 
         </div>
         <!--begin::Card header-->

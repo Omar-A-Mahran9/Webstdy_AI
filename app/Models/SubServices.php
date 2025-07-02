@@ -11,7 +11,7 @@ class SubServices extends Model
 {
     use HasFactory, SoftDeletes;
     protected $guarded = [];
-    protected $appends = ['name','full_image_path', 'description','full_icon_path',];
+    protected $appends = ['name','full_image_path', 'description',];
     protected $casts   = [
         'created_at' => 'date:Y-m-d',
         'updated_at' => 'date:Y-m-d',
@@ -35,7 +35,7 @@ class SubServices extends Model
         return $this->attributes['description_' . app()->getLocale()];
     }
 
- 
+
 
     public function getFullImagePathAttribute()
     {

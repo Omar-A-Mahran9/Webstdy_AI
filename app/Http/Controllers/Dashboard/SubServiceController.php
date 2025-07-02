@@ -23,7 +23,7 @@ class SubServiceController extends Controller
              return response(getModelData(model: new SubServices()));
             }
         else
-    $services =   SubServices::select('id', 'name_en','name_ar')->get();
+    $services =   Service::select('id', 'name_en','name_ar')->get();
     $tools = Tool::select('id', 'name_en','name_ar')->get();
 
     return view('dashboard.sub-services.index', compact('services', 'tools'));
@@ -31,22 +31,29 @@ class SubServiceController extends Controller
     }
 
 
-    public function store(StoreSubServiceRequest $request)
-    {
-        $this->authorize('create_sub_services');
+public function store(StoreSubServiceRequest $request)
+{
+    $this->authorize('create_sub_services');
 
-        $data = $request->validated();
+    $data = $request->validated();
 
-        // Handle image upload
-        if ($request->hasFile('image')) {
-            $data['image'] = uploadImageToDirectory($request->file('image'), "Services");
-        }
-        $data['is_publish'] = $request->has('is_publish') ? 1 : 0;
-
-        // Create the AddonService
-        SubServices::create($data);
-
+    if ($request->hasFile('image')) {
+        $data['image'] = uploadImageToDirectory($request->file('image'), "Services");
     }
+
+    $data['is_publish'] = $request->has('is_publish') ? 1 : 0;
+
+    // Remove tool_id from $data before create
+    $toolIds = $data['tool_id'] ?? [];
+    unset($data['tool_id']);
+
+    // Create sub-service and attach tools
+    $subService = SubServices::create($data);
+    $subService->tools()->sync($toolIds);
+
+    return response()->json(['message' => __('Sub service created successfully')]);
+}
+
 
 
 

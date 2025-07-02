@@ -13,15 +13,13 @@ return new class extends Migration
     {
         Schema::create('sub_service_tool', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('sub_service_id')->constrained('sub_services')->onDelete('cascade');
+            $table->foreignId('sub_services_id')->constrained('sub_services')->onDelete('cascade');
             $table->foreignId('tool_id')->constrained('tools')->onDelete('cascade');
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
+
     public function down(): void
     {
         Schema::dropIfExists('sub_service_tool');

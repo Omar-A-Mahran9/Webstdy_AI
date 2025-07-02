@@ -65,7 +65,8 @@
                     </span>
                     <!--end::Svg Icon-->
                     <input type="text" data-kt-docs-table-filter="search"
-                        class="form-control form-control-solid w-250px ps-15" placeholder="{{ __('Search for Sub Service') }}">
+                        class="form-control form-control-solid w-250px ps-15"
+                        placeholder="{{ __('Search for Sub Service') }}">
                 </div>
                 <!--end::Search-->
 
@@ -170,8 +171,10 @@
                         <div class="row mt-3">
                             <div class="col-md-12 mb-4">
                                 <label for="service_id" class="form-label required">{{ __('Main Service') }}</label>
-                                <select name="service_id" id="service_id" class="form-select form-select-solid"  >
-                                    <option value="">{{ __('Select Service') }}</option>
+
+                                <select name="service_id" id="service_id_inp" class="form-select form-select-solid"
+                                    data-control="select2" data-placeholder="{{ __('Select Service') }}">
+                                    <option value=""></option>
                                     @foreach ($services as $service)
                                         <option value="{{ $service->id }}">{{ $service->name_en }}</option>
                                     @endforeach
@@ -179,15 +182,16 @@
                                 <div class="invalid-feedback" id="service_id"></div>
                             </div>
                             <div class="col-md-12 mb-4">
-                                <label for="tool_id" class="form-label required">{{ __('tools') }}</label>
-                                <select name="tool_id" id="tool_id" class="form-select form-select-solid"  >
-                                    <option value="">{{ __('Select Tool') }}</option>
+                                <label for="tool_id_inp" class="form-label required">{{ __('tools') }}</label>
+                                <select name="tool_id[]" id="tool_id_inp" class="form-select form-select-solid"
+                                    data-control="select2" data-placeholder="{{ __('Select Tool') }}" multiple>
                                     @foreach ($tools as $tool)
                                         <option value="{{ $tool->id }}">{{ $tool->name }}</option>
                                     @endforeach
                                 </select>
                                 <div class="invalid-feedback" id="tool_id"></div>
                             </div>
+
                         </div>
                         <!--begin::Input group-->
                         <div class="fv-row d-flex align-items-center gap-5 mt-5">
@@ -227,7 +231,7 @@
 @push('scripts')
     <script src="{{ asset('assets/dashboard/js/global/datatable-config.js') }}"></script>
     <script src="{{ asset('assets/dashboard/js/datatables/datatables.bundle.js') }}"></script>
-    <script src="{{ asset('assets/dashboard/js/datatables/sub-services.js') }}"></script>
+    <script src="{{ asset('assets/dashboard/js/datatables/sub-service.js') }}"></script>
     <script src="{{ asset('assets/dashboard/js/global/crud-operations.js') }}"></script>
     <script src="{{ asset('assets/dashboard/plugins/custom/fslightbox/fslightbox.bundle.js') }}"></script>
     <script src="{{ asset('assets/dashboard/plugins/custom/tinymce/tinymce.bundle.js') }}"></script>
