@@ -73,6 +73,7 @@ Route::delete("services/delete-selected", "ServiceController@deleteSelected");
 Route::get("services/restore-selected", "ServiceController@restoreSelected");
 Route::resource('services', 'ServiceController')->except(['create', 'edit']);
 Route::resource('sub-services', 'SubServiceController')->except(['create', 'edit']);
+Route::resource('projects', 'PController')->except(['create', 'edit']);
 
 
 Route::resource('contact-requests', 'ContactRequestController')->except(['create', 'edit', 'store', 'update']);

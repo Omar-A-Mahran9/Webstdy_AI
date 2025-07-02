@@ -66,11 +66,15 @@
 
                     </x-dashboard.aside-item>
                 @endcan
+
+                
                 @can('view_contact_us')
                     <x-dashboard.aside-item :slug="'contact_us'" :route="route('dashboard.contact-requests.index')" :title="__('Contact us')">
                         <i class="ki-outline ki-phone fs-1"></i>
                     </x-dashboard.aside-item>
                 @endcan
+
+
                 @can('view_services')
                     <x-dashboard.aside-item :slug="'services'" :route="route('dashboard.services.index')" :title="__('Services')">
                         <i class="ki-outline ki-plus fs-2"></i>
@@ -86,66 +90,12 @@
                 @endcan
                 <!--end:Menu item-->
 
-                {{-- @can('view_numbers')
-                    <x-dashboard.aside-item :slug="'numbers'" :route="route('dashboard.numbers.index')" :title="__('Numbers')">
-                        <i class="ki-outline ki-abstract-19 fs-2"></i>
-                    </x-dashboard.aside-item>
-                @endcan --}}
-                <!--end:Menu item-->
-
-                {{-- @can('view_tags') --}}
-                {{-- <x-dashboard.aside-item :slug="'tags'" :route="route('dashboard.tags.index')" :title="__('Tags')">
-                    <i class="ki-outline ki-key fs-2"></i>
-                </x-dashboard.aside-item> --}}
-                {{-- @endcan --}}
-                {{--
-                @can('view_ourlevels')
-                    <x-dashboard.aside-item :slug="'ourlevels'" :route="route('dashboard.ourlevels.index')" :title="__('Our Level')">
-                        <i class="ki-outline ki-chart-line fs-2"></i>
-                    </x-dashboard.aside-item>
-                @endcan
-
-                @can('view_skills')
-                    <x-dashboard.aside-item :slug="'skills'" :route="route('dashboard.skills.index')" :title="__('Skills')">
-                        <i class="fas fa-brain fs-2"></i>
-                    </x-dashboard.aside-item>
-                @endcan
-
-                @can('view_vision')
-                    <x-dashboard.aside-item :slug="'vision'" :route="route('dashboard.vision.index')" :title="__('Vision')">
-                        <i class="fas fa-eye fs-2"></i>
-                    </x-dashboard.aside-item>
-                @endcan --}}
-
-                {{-- @can('view_whyus')
-                    <x-dashboard.aside-item :slug="'whyus'" :route="route('dashboard.whyus.index')" :title="__('Why Us')">
-                        <i class="fas fa-handshake fs-2   me-2"></i>
-                    </x-dashboard.aside-item>
-                @endcan
-
                 <!--begin:Menu item-->
-                @can('view_orders')
-                    <x-dashboard.aside-item :slug="'orders'" :route="route('dashboard.orders.index')" :title="__('Orders')">
-                        <i class="ki-outline ki-parcel fs-1"></i>
-                    </x-dashboard.aside-item>
-                @endcan --}}
-                <!--end:Menu item-->
-                <!--begin:Menu item-->
-                {{-- @can('view_newsletter')
+                @can('view_newsletter')
                     <x-dashboard.aside-item :slug="'newsletter'" :route="route('dashboard.newsletter.index')" :title="__('Newsletter')">
                         <i class="ki-outline ki-book-square fs-1"></i>
                     </x-dashboard.aside-item>
-                @endcan --}}
-                <!--end:Menu item-->
-
-
-
-
-                {{-- @can('view_children_trip')
-                    <x-dashboard.aside-item :slug="'trip'" :route="route('dashboard.trip.index')" :title="__('children Trip')">
-                        <i class="fas fa-chess fs-2 me-2"></i>
-                    </x-dashboard.aside-item>
-                @endcan --}}
+                @endcan
 
 
                 <!--begin:Menu item-->
@@ -155,48 +105,6 @@
                     </x-dashboard.aside-item>
                 @endcan
                 <!--end:Menu item-->
-
-                <!--begin:Menu item-->
-                {{-- @can('view_customers')
-                    <x-dashboard.aside-item :slug="'children'" :route="route('dashboard.children.index')" :title="__('children')">
-                        <i class="fas fa-child fs-2"></i>
-                    </x-dashboard.aside-item>
-                @endcan --}}
-
-                {{-- @canany(['view_packages']) --}}
-                {{-- <div class="menu-item">
-                        <div class="menu-content pt-5 pb-0">
-                            <span class="menu-section text-muted text-uppercase fs-8 ls-1">{{ __('Packages') }}</span>
-                        </div>
-
-                    </div> --}}
-                {{-- <div class="ms-2"> --}}
-                {{-- <x-dashboard.aside-item :slug="'days'" :route="route('dashboard.days.index')" :title="__('Days')">
-                        <i class="ki-outline ki-calendar-2 fs-2"></i>
-                    </x-dashboard.aside-item>
-                    <x-dashboard.aside-item :slug="'times'" :route="route('dashboard.times.index')" :title="__('Times')">
-                        <i class="ki-outline ki-time fs-2"></i>
-                    </x-dashboard.aside-item>
-                    <x-dashboard.aside-item :slug="'groups'" :route="route('dashboard.groups.index')" :title="__('Groups')">
-                        <i class="ki-outline ki-people fs-2"></i>
-                    </x-dashboard.aside-item>
-                    <x-dashboard.aside-item :slug="'features'" :route="route('dashboard.features.index')" :title="__('Features')" class="">
-                        <i class="ki-outline ki-star fs-2"></i>
-                    </x-dashboard.aside-item>
-
-                    <x-dashboard.aside-item :slug="'outcomes'" :route="route('dashboard.outcomes.index')" :title="__('Outcomes')">
-                        <i class="fas fa-certificate fs-2"></i>
-                    </x-dashboard.aside-item>
-
-                    <x-dashboard.aside-item :slug="'packages'" :route="route('dashboard.packages.index')" :title="__('Packages')">
-                        <i class="ki-outline ki-abstract-26 fs-2"></i>
-                    </x-dashboard.aside-item>
- --}}
-
-                {{-- </div> --}}
-                {{-- @endcanany --}}
-
-
 
 
                 @can('view_roles')
