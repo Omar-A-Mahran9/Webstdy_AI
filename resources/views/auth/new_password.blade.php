@@ -191,10 +191,10 @@ License: For each use you must have a valid license purchased only from above li
                     <!--begin::Footer-->
                     <div class="d-flex flex-center flex-column-auto p-10">
                         <!--begin::Links-->
-                        <div class="d-flex align-items-center fw-bold fs-6">
+                        {{-- <div class="d-flex align-items-center fw-bold fs-6">
                             <a href="https://www.linkedin.com/in/omar-a-mahran/" target="_blank"
                                 class="text-gray-800 text-hover-primary">Omar_A_Mahran</a>
-                        </div>
+                        </div> --}}
                         <!--end::Links-->
                     </div>
                     <!--end::Footer-->
